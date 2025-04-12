@@ -1,0 +1,48 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Словарь английских слов{% endblock %}
+
+
+{% block content %}
+<!--</head>-->
+<div class="dict-page">
+    <h1>Список добавленных слов (Словарь)</h1>
+</div>
+<!--erserfsef-->
+
+<!--dsfdssd-->
+    <table class="dict-table">
+        <thead>
+            <tr>
+                <th>Пользователь</th>
+                <th>Слово на анг. языке</th>
+                <th>Перевод</th>
+                <th class="date-col">Дата добавления</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for word in words %}
+            <tr>
+                <td>{{ word.user.username }}</td>
+                <td>{{ word.english_word }}</td>
+                <td>{{ word.translation }}</td>
+                <td class="date-col">{{ word.created_at|date:"d.m.Y" }}</td>
+                <td>
+<!--# удалять слова может только или авторизованный пользователь или Админ-->
+                    {% if word.user == request.user or request.user.is_superuser %}
+                    <a href="{% url 'delete_word' word.id %}" class="action-link">Удалить слово</a>|
+                    <a href="{% url 'edit_word' word.id %}">Редактировать слово</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<div class="stats-total">
+    <strong>Всего слов в словаре:</strong> {{ words.count }}
+</div>
+<div>
+    <a href="{% url 'add_word' %}" class="add-word-link">Добавить новое слово</a>
+</div>
+{% endblock %}

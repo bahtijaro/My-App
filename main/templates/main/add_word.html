@@ -1,0 +1,48 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавить слово{% endblock %}
+
+{% block content %}
+<div class="add-word">
+    <h1>Добавление нового слова на анг. языке</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" class="add-word-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>Введите английское слово:</label>
+            <input type="text"
+                   name="english_word"
+                   value="{{ form.english_word.value|default_if_none:'' }}"
+                   class="{% if form.english_word.errors %}is-invalid{% endif %}"
+                   placeholder="">
+            {% if form.english_word.errors %}
+                <div class="error">{{ form.english_word.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label>Введите перевод:</label>
+            <input type="text"
+                   name="translation"
+                   value="{{ form.translation.value|default_if_none:'' }}"
+                   class="{% if form.translation.errors %}is-invalid{% endif %}"
+                   placeholder="">
+            {% if form.translation.errors %}
+                <div class="error">{{ form.translation.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <button type="submit">Добавить новое слово в Словарь</button>
+    </form>
+    <a href="{% url 'word_list' %}" class="back-dickt">← Вернуться к словарю</a>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="add-word">
+    <h1>Недостаточно слов для проведения теста</h1>
+    <div style="color: #039be5;">
+        <span style="color: black; font-size: 25px;">Всего слов в словаре :</span>
+        <span style="color: #039be5;font-size: 25px;">{{ current_words }}</span>
+    </div>
+    <div style="color: #039be5;">
+        <span style="color: black; font-size: 25px;">Для выполнения теста нужно не менее :</span>
+        <span style="color: #039be5;font-size: 25px;">{{ required_words }}</span>
+    </div>
+    <a href="{% url 'add_word' %}" class="add-word-link">Добавить слова в словарь</a>
+    <a href="{% url 'word_list' %}" class="add-word-link">Перейтй на страницу Словаря</a>
+</div>
+{% endblock %}

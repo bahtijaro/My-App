@@ -1,0 +1,38 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> {% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}" class="rel">
+    <link rel="stylesheet" href="{% static 'main/css/materialize.css' %}" class="rel">
+
+</head><body>
+    <aside>
+        <img src="{% static 'main/img/Eng.png' %}" alt="">
+        <span class="logo">Dictionary</span>
+        <h3>Навигация</h3>
+    <ul>
+        <li><a href="{% url 'index' %}"><img class="nav-icon" src="{% static 'main/img/house-solid.svg' %}"> Главная </a></li>
+        <li><a href="{% url 'add_word' %}"><img class="nav-icon" src="{% static 'main/img/twitter-x.svg' %}"> Новые слова </a></li>
+        <li><a href="{% url 'word_list' %}"><img class="nav-icon" src="{% static 'main/img/up.svg' %}"> Словарь </a></li>
+        <li><a href="{% url 'start_test' %}"><img class="nav-icon" src="{% static 'main/img/wechat.svg' %}"> Тесты </a></li>
+    </ul>
+
+
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+
+        
+    </main>
+
+
+</body>
+</html>

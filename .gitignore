@@ -1,0 +1,14 @@
+# created by virtualenv automatically
+# Файлы окружения
+.env
+.env/
+.env.local
+
+# Игнорировать папку venv
+venv/
+
+# Кэш Python
+__pycache__/
+
+# База данных
+db.sqlite3

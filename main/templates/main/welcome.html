@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Тренажер английского языка</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}" class="rel">
+    <link rel="stylesheet" href="{% static 'main/css/materialize.css' %}" class="rel">
+
+    <div class="container">
+        <h1>Тренажер английского языка</h1>
+        <p style="font-size: 20px; margin-left: 10px;">Это начальная страница проекта по изучению английского языка. Для продолжения работы с проектом необходимо зарегистрироваться или ввести данные существующего аккаунта.</p>
+
+        <div class="boxes">
+            <div class="box">
+                <h2>Регистрация</h2>
+                <p>При нажатии на кнопку происходит переход на страницу регистрации нового пользователя.</p>
+                <a href="register">
+                    <button>Перейти</button>
+                </a>
+            </div>
+
+            <img src="{% static 'main/img/Eng.png' %}" class="wer" style="max-height: 200px; margin: 30px auto; display: block;">
+
+            <div class="box">
+                <h2>Авторизация</h2>
+                <p>При нажатии на кнопку происходит переход на страницу ввода данных существующего пользователя. </p>
+                <a href="login">
+                <button>Перейти</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</head>
+</html>

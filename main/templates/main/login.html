@@ -1,0 +1,9 @@
+<h2>Авторизация пользователя</h2>
+<p>Форма доступа</p>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Имя пользователя" required autocomplete="off">
+    <input type="password" name="password" placeholder="Пароль" required autocomplete="off">
+    <button type="submit">Войти</button>
+</form>
+

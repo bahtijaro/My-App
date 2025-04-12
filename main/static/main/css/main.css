@@ -1,0 +1,330 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*основное содержимое, отступ от панельки 250 px*/
+main {
+    margin-left: 250px;
+    padding: 20px;
+    min-height: 100vh;
+}
+/* боковая панелька, ширина 250 px*/
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    background: #181818;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+aside img {
+    width: 80px;
+    float: left;
+}
+
+aside  .logo {
+    font-size: 40px;
+    color: darkred;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 15px;
+}
+
+aside h3 {
+    margin-top: 40px;
+    font-size: 28px;
+    font-weight: bold;
+
+}
+
+ul li a img {
+    width: 25px;
+    height: 25px;
+}
+
+aside ul{
+    list-style-type: none;
+    /*padding: 0;*/
+    /*margin-left: -5px;*/
+}
+
+aside ul li {
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    align-items: center;
+    text-decoration: none;
+    font-size: 25px;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: darkred;
+    text-decoration: none;
+    transform: scale(1.05);
+
+}
+
+aside .nav-icon {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.container {
+    max-width: 100px;
+    float: left;
+    margin: auto;
+    text-align: center;
+}
+
+main .container p {
+    max-width: 70%;
+    margin: 50px auto;
+    font-size: 30px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1)
+}
+
+
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 30%;
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+    transition: transform 0.2s;
+
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.box button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.box button:hover {
+    background-color: #0056b3;
+}
+
+.logout-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/*************************/
+/*Страница add_word*/
+
+.add-word {
+    max-width: 800px;
+    margin-left: 250px;
+    /*margin: 0 auto;*/
+    padding: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+
+}
+/*Заголовок Главный */
+.add-word h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 35px;
+    color: #039be5;
+    /*box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);*/
+}
+
+.add-word-form .form-group {
+    margin-bottom: 20px;
+}
+
+ /*заголовки Введите анг. слово и перевод */
+.add-word-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: darkred;
+    font-size: 25px;
+
+}
+ /*Вводимый текст */
+.add-word-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ /*Всплывающий текст об ошибке */
+.add-word-form .error {
+    color: #dc3545;
+    margin-top: 5px;
+    font-size: 14px;
+}
+ /*Кнопка добавления в словарь*/
+.add-word-form button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.add-word-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.back-dickt {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-dickt:hover {
+    text-decoration: underline;
+}
+
+/* Вспывающее сообщение ,две ветки */
+.alert {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+/* Вспывающее сообщение - все ок */
+.alert-success {
+    background-color: #d4edda;
+    color: black;
+}
+/* Вспывающее сообщение - ошибка */
+.alert-error {
+    background-color: red;
+    color: black;
+}
+/*************************/
+
+
+/*Страница Словарь***********************/
+
+.dict-page {
+    max-width: 70%;
+    /*margin: 0 auto;*/
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/*Заголовок Главный */
+.dict-page h1 {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 35px;
+    color: #039be5;
+}
+
+/* Таблица со словами */
+.dict-table {
+    width: 70%;
+    margin-top: 20px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.dict-table th {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.dict-table td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.dict-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Кнопки и ссылки */
+.action-link {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+.add-word-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.add-word-link:hover {
+    background-color: #218838;
+}
+
+.date-col {
+    white-space: nowrap;
+}
+
+.stats-total {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 20px;
+}

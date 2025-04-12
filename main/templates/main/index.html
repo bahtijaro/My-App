@@ -1,0 +1,42 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Главная страница {% endblock %}
+
+{% block content %}
+<div class="dict-page">
+    <h1>Тренажер английского языка</h1>
+</div>
+<div class="container">
+    <p>Это страничка проекта про изучение английского языка. Здесь можно добавить в словарь новые слова и потом проверить себя, насколько знания усвоены!</p>
+    <div style="color: #039be5;">
+        <span style="color: black; font-size: 25px;">Вы авторизованы как :</span>
+        <span style="color: #039be5;font-size: 25px;">{{ user.username }}</span>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="logout-button">Сменить пользователя</button>
+        </form>
+    </div>
+    <div class="boxes">
+        <div class="box">
+            <h2>Новые слова</h2>
+<!--            <p>При переходе по ссылке доступно добавление новых слов в словарь</p>-->
+            <a href="{% url 'add_word' %}"><button>Перейти</button>
+            </a>
+        </div>
+        <div class="box">
+            <h2>Словарь</h2>
+<!--            <p>При переходе по ссылке доступен словарь добавленных слов пользователями</p>-->
+            <a href="{% url 'word_list' %}"><button>Перейти</button>
+            </a>
+        </div>
+        <div class="box">
+            <h2>Тесты</h2>
+<!--            <p>При переходе по ссылке можно пройти тест и проверить свои знания</p>-->
+            <a href="{% url 'start_test' %}"><button>Перейти</button>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

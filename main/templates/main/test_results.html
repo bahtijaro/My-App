@@ -1,0 +1,38 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<div class="dict-page">
+    <h1>Результаты теста пользователя {{ user.username }}</h1>
+</div>
+<span style="color: black;font-size: 25px;">Количество правильных ответов составляет: {{ correct }}/10 ({{ percent }})% </span>
+    <table class="dict-table">
+        <thead>
+            <tr>
+                <th>Cлово на анг. языке</th>
+                <th>Ваш ответ</th>
+                <th>Правильный ответ</th>
+                <th>Результат</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.word.english_word }}</td>
+                <td>{{ result.user_answer|default:"-" }}</td>
+                <td>{{ result.correct_translation }}</td>
+                <td>
+                    {% if result.is_correct %}
+                        <span class="text-correct" style="color: green">Верно</span>
+                    {% else %}
+                        <span class="text-incorrect" style="color: red">Неверно</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'word_list' %}" class="add-word-link">Вернуться в словарь</a>
+    <a href="{% url 'start_test' %}" class="add-word-link">Попробовать снова</a>
+</div>
+{% endblock %}
