@@ -30,8 +30,8 @@
 
 ## Для проверки качество кода необюходимо использовать pylint:
 Файл .pylintrc уже присутствует в проекте. Для работы с pylint необходимо выполнить команды в терминале:
-pip install pylint
-pip install pylint-django
+1. pip install pylint
+2. pip install pylint-django
 
 Запуск проверки через терминал:
 pylint main/ --load-plugins pylint_django
