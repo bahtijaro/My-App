@@ -34,7 +34,7 @@
 2. pip install pylint-django
 
 Запуск проверки через терминал:
-pylint main/ --load-plugins pylint_django
+1. pylint main/ --load-plugins pylint_django
 
 Бахтияров Р.А. 13.04.2025 г.
 Проект Python + Django для "Модуль 3. Создание Web-сервисов на Python" Пуск МФТИ.
