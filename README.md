@@ -14,7 +14,7 @@
 4. Так как .env файл (где располагается secret key) отсутствует в репозитории, то необходимо в терминале запустить следующую команду copy .env.example .env (файл example .env присутствует в репозитории)
    и проконтролировать создание файл .env;
 5. Далее необходимо сгенерировать secret key при помощи команды (запускать ее находясь в корне приложения) python -c "from django.core.management.utils import get_random_secret_key; print(f'SECRET_KEY={get_random_secret_key()}')"
-6. Открыть файл .env и в поле SECRET_KEY ввести ранее сгенерированный secret key;
+6. Открыть файл .env и в поле SECRET_KEY ввести ранее сгенерированный secret key или, т.к. проект учебный, использовать тот, который указан в файле .env;
 7. Выполнить миграцию при помощи команды  python manage.py migrate;
 8. Выполнить создание суперюзера при помощи команды python manage.py createsuperuser (логин admin, email - пропустить, пароль - вести и придумать);
 9. Запустить сервер при помощи команды python manage.py runserver;
